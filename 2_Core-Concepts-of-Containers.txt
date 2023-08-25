@@ -1,0 +1,7 @@
+Core concepts of Linux containers:
+* Linux namespace => Helps in isolating container processes from one and another
+* Cgroups => Helps in setting min and max resouce limits (like CPU, RAM, network bandwidth, etc) for the containers
+
+Links:
+* https://www.nginx.com/blog/what-are-namespaces-cgroups-how-do-they-work/
+* https://www.baeldung.com/linux/cgroups-and-namespaces

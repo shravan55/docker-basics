@@ -1,0 +1,48 @@
+docker image commands (https://docs.docker.com/engine/reference/commandline/image/)
+-----------------------------------------------------------------------------------
+The below commands allows you to manage pushing/pulling Docker images from Docker hub.
+* docker image ls
+	- View all Docker images available in the host machine
+
+* docker image pull [image_name]
+	- Downloads the specified image from Docker hub.
+	- The command does nothing if the image is already available in the host machine
+	- Example: docker image pull alpine
+
+
+docker container commands (https://docs.docker.com/engine/reference/commandline/container/)
+-------------------------------------------------------------------------------------------
+The below commands allows you to manage the Docker containers running in your host machine.
+* docker container ls
+	- View all active container running in the host machine
+
+* docker container ls -a
+	- View all containers (active/non-active) running in the host machine
+
+* docker container run [image_name]
+	- Create a new container from the specified image and assign a random name to the container.
+	- By default, the container will run in the foreground and will print the container logs to the terminal.
+	- Pressing Ctrl+C will stop the container.
+	- Users can additional options to this command for different purposes.
+
+		# docker container run --name [container_name] [image_name] - Create a new container with specified name.
+			Example: docker container run --name apache1 httpd
+
+		# docker container run -d [image_name] - Create a new container and runs it in the background.
+			Example: docker container run -d --name apache2 httpd
+
+		# docker container run -p [host_port]:[container_port] [image_name] - Create a new container and performs port forwarding from container to host machine.
+			Example: docker container run -d -p 8080:80 --name apache3 httpd
+
+		# docker container run -v [host_dir]:[container_dir] -w [container_dir] [image_name] [container_exec_cmds]
+			~ Create a new container
+			~ -v option is to mount host machine directory inside the container
+			~ -w option is to change the working directory inside the container
+			~ Finally execute the command inside the container
+			Example: docker container run -v $pwd:/data -w /data openjdk:17 javac Main.java
+
+		# docker container run --rm [image_name] - Creates a new container and deletes it automatically once the container stops.
+			Example: docker container run --rm -v $pwd:/data -w /data openjdk:17 javac Main.java
+
+		# docker container run -it [image_name] - Creates a new container and attaches terminal stdin with the container to interact with it.
+			Example: docker container run --rm -it -v $pwd:/data -w /data alpine vi hello_container.txt

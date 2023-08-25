@@ -1,0 +1,28 @@
+What is a Container?
+--------------------------
+Links:
+* https://www.slideteam.net/introduction-to-dockers-and-containers-powerpoint-presentation-slides.html
+* https://docs.docker.com/get-started/
+
+What is Docker?
+---------------
+Links:
+* https://docs.docker.com/get-started/overview/
+
+Install Docker
+--------------
+Links:
+* https://docs.docker.com/get-docker/
+
+Docker online playground (Requires Docker account)
+--------------------------------------------------
+Links:
+* https://labs.play-with-docker.com/
+
+Docker compose
+--------------
+Docker compose CLI allows us to build/ship/run multiple docker containers with a single command.
+Links:
+* https://www.baeldung.com/ops/docker-compose
+* https://docs.docker.com/compose/compose-file/02-model/
+* https://docs.docker.com/compose/compose-file/03-compose-file/ 

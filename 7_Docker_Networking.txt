@@ -1,0 +1,19 @@
+Networking overview:
+--------------------
+https://docs.docker.com/network/
+
+Discussions:
+------------
+* Different ways for docker container to communicate with each other
+	# Example:
+		~ container-1:80 is mapped to 8080 port on host machine
+		~ container-2:80 is mapped to 8090 port on host machine
+	# Method 1:
+		~ container-1 -> calls [public_ip|dns_domain]:8090/hello -> docker VPN -> intranet/internet -> docker VPN (8090 mapped to container-2:80) -> container-2
+
+	# Method 2:
+		~ container-1 -> calls container-2:80/hello -> docker VPN -> container-2
+
+* External apps communicating with docker containers
+	# Method 1:
+		~ external apps -> calls [public_ip|dns_domain]:8090/hello -> intranet/internet -> docker VPN (8090 mapped to container-2:80) -> container-2

@@ -1,0 +1,17 @@
+Dockerfile
+----------
+* An instruction file to build a custom docker image.
+* Following are the general flow of steps involved while writing a Dockerfile
+	# Pull a Base OS image
+	# Install binaries/libs for your app
+	# Install the app
+	# Run app
+* Links:
+	# https://docs.docker.com/engine/reference/builder/
+
+docker build command (https://docs.docker.com/engine/reference/commandline/build/)
+----------------------------------------------------------------------------------
+* Takes docker context as input to build and tag a new docker image.
+* Docker context is the directory where Dockerfile is present.
+* Command: docker build -t [image_name]:[image_version(optional)] [docker_context]
+* Example: docker build -t my-app ./path/to/docker/context
